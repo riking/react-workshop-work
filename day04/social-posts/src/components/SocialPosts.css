@@ -1,0 +1,10 @@
+.SocialPosts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.SocialPosts .PostForm-prompt {
+    margin-top: 1em;
+}

@@ -1,0 +1,9 @@
+.PostInList {
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 720px;
+    margin-top: 1em;
+
+    white-space: pre-wrap;
+}
