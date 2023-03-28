@@ -1,8 +1,13 @@
 import { MouseEventHandler } from "react";
 
-const Button = ({value, onClick}: {value: number, onClick: MouseEventHandler<HTMLButtonElement>}) => {
+interface ButtonProps {
+    value: number,
+    onClick: MouseEventHandler<HTMLButtonElement>,
+}
+
+const Button = ({value, onClick}: ButtonProps) => {
   return (
-    <button onClick={onClick}><h1>Button {value}</h1></button>
+    <button onClick={onClick}><h1>Increase {value}</h1></button>
   )
 };
 

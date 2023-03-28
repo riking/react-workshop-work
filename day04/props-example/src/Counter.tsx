@@ -5,7 +5,7 @@ export default function Counter({initialCounterValue}: {initialCounterValue: num
     const [counterValue, setCounterValue] = useState(initialCounterValue);
     return (
         <div>
-            <h1>Counter Component</h1>
+            <h1>Counter Component {initialCounterValue}: {counterValue}</h1>
             <Button value={counterValue} onClick={() => setCounterValue(e => e+1)} />
         </div>
     )
