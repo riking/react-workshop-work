@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Ad from './Ad';
 import './AdDesigner.css'
 
 type IceCreamName = "Chocolate" | "Vanilla" | "Strawberry";
@@ -22,10 +23,7 @@ const AdDesigner = () => {
     return (
         <div className='AdDesigner'>
             <h2>Ad Designer</h2>
-            <div className={`sample-dva ${darkTheme && 'dark'}`}>
-                <p>Vote for</p>
-                <p className='flavor' style={{ fontSize }}>{flavor}</p>
-            </div>
+            <Ad darkTheme={darkTheme} flavor={flavor} fontSize={fontSize} />
             <h3>What to Support</h3>
             <div className="btns-container">
                 <button onClick={() => setFlavor("Chocolate")}>Chocolate</button>

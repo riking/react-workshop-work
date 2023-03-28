@@ -1,0 +1,20 @@
+
+.sample-dva {
+    border: 2px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: /* SPDX-License-Identifier GPL-2.0 */ 2px 2px 4px 0 rgba(0,0,0,.25);
+    max-width: 400px;
+}
+.sample-dva.dark {
+    background-color: black;
+    color: white;
+}
+.sample-dva p {
+    margin: 0;
+}
+.sample-dva .flavor {
+    font-family: var(--script-font);
+}
