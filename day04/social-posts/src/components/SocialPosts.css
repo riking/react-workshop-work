@@ -5,6 +5,6 @@
     flex-direction: column;
 }
 
-.SocialPosts .PostForm-prompt {
+.SocialPosts > button {
     margin-top: 1em;
 }

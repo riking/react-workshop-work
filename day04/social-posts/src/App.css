@@ -1,0 +1,42 @@
+.modal.hidden {
+  display: none;
+}
+.modal-outer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1300;
+  overflow: auto;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1200;
+  background-color: #111;
+  opacity: 0.9;
+  transition: 3s opacity;
+}
+.modal-backdrop.hidden {
+  opacity: 0;
+  display: none;
+}
+.modal-middle-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.modal-inner-container {
+  position: relative;
+  --modal-max-width: 47em;
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  margin: 0 auto;
+  max-width: var(--modal-max-width);
+  background-color: white;
+  box-shadow: 0 8px 60px rgba(0,0,0,.6);
+}

@@ -39,14 +39,21 @@ interface Props {
 
 const SocialPosts = () => {
   const [postList, setPostList] = useState<Post[]>(MOCK_POSTS);
+  const [showCreateThought, setShowCreateThought] = useState(false);
 
   const createPost = (p: Post) => {
+    setShowCreateThought(false);
 
+  };
+
+  const cancelPosting = () => {
+    setShowCreateThought(false);
   };
 
   return (
     <div className='SocialPosts'>
-        <PostForm onSubmitForm={createPost} />
+        <button onClick={() => setShowCreateThought(true)}>Create Post</button>
+        <PostForm modalVisible={showCreateThought} onSubmitForm={createPost} onClose={cancelPosting} />
         <div className='postList'>
             {postList.map(p => {
                 return (
