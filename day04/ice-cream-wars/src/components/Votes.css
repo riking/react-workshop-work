@@ -1,0 +1,18 @@
+.Votes {
+    flex: 1;
+}
+
+.vote-bar {
+    display:block;
+    height: 1em;
+}
+
+.vote-bar-Chocolate {
+    background-color: rgb(85, 47, 12);
+}
+.vote-bar-Vanilla {
+    background-color: rgb(216, 178, 131);
+}
+.vote-bar-Strawberry {
+    background-color: salmon;
+}

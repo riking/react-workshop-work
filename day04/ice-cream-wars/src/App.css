@@ -1,0 +1,27 @@
+:root {
+  --script-font: 'Caveat', cursive;
+}
+
+body, h1, h2, h3 {
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: var(--script-font);
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App > main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  /* Desktop */
+  .App > main {
+    flex-direction: row;
+  }
+}

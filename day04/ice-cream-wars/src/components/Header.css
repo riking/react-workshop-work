@@ -1,0 +1,14 @@
+.Header {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding-bottom: 1px;
+    margin-bottom: 1.5em;
+
+    box-shadow: /* SPDX-License-Identifier GPL-2.0 */ 0 2px 4px -1px rgba(0,0,0,.25);
+}
+.Header h1 {
+    color: #0e3c7e;
+    margin: 0.2em auto;
+    font-family: 'Caveat';
+}
