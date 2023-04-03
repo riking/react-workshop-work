@@ -44,6 +44,7 @@ const SocialPosts = () => {
   const createPost = (p: Post) => {
     setShowCreateThought(false);
 
+    setPostList([p, ...postList]);
   };
 
   const cancelPosting = () => {
@@ -55,9 +56,13 @@ const SocialPosts = () => {
         <button onClick={() => setShowCreateThought(true)}>Create Post</button>
         <PostForm modalVisible={showCreateThought} onSubmitForm={createPost} onClose={cancelPosting} />
         <div className='postList'>
-            {postList.map(p => {
+            {postList.map((p, index) => {
                 return (
-                    <PostInList key={p.title} post={p} onDelete={() => {}} />
+                    <PostInList key={p.title} post={p} onDelete={() => {
+                        let newList = postList.slice(0);
+                        newList.splice(index, 1);
+                        setPostList(newList);
+                    }} />
                 );
             })}
         </div>

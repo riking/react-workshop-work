@@ -7,4 +7,15 @@
 
 .SocialPosts > button {
     margin-top: 1em;
+    background-color: var(--accent);
+    color: var(--main-background);
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    border: 1px solid black;
+}
+.postList, .SocialPosts > button {
+    max-width: 720px;
 }
