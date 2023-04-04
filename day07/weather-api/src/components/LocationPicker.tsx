@@ -66,6 +66,7 @@ const LocationPicker = ({setLocation}: Props) => {
         <button onClick={() => setLocation("LIX", "60,90", "New Orleans, LA")} disabled={working}>New Orleans</button> {/* MSY */}
         </div>
         <div className='latlon'>
+            <button disabled style={{marginLeft: 0}}>Detect</button>
             Latitude:
             <input name="latitude" type="text" value={lat} onChange={(evt) => setLat(evt.target.value) } onBlur={() => updateLatlonValid() }></input>
             Longitude:

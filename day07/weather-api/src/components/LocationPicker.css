@@ -1,4 +1,9 @@
 .LocationPicker button {
     display: inline;
-    margin-left: 0.5em;
+    margin: 0 0.25em;
+}
+.LocationPicker input {
+    margin: 0 0.5em;
+    width: 6em;
+    font-family: 'Courier New', Courier, monospace;
 }
