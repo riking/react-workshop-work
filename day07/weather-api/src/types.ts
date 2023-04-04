@@ -5,6 +5,7 @@ export type TimestampRange = string;
 export interface AppError {
     isError: true,
     generic?: any;
+    pointsError?: PointsErrorResponse;
 }
 
 export const isAppError = (p: any): p is AppError => !!p.isError;
@@ -48,4 +49,33 @@ export interface WeatherPeriod {
 export interface WmoUnit {
     unitCode: string;
     value: number;
+}
+
+export interface PointsResponse {
+    properties: WxPoint;
+    // more properties omitted
+}
+
+export interface PointsErrorResponse {
+    status: number;
+    title: string; /* Data Unavailable For Requested Point */
+    detail: string; /* Unable to provide data for requested point 29.991,90.26 */
+}
+
+export interface WxPoint {
+    gridId: string;
+    gridX: number;
+    gridY: number;
+    relativeLocation: WxFeature;
+    timeZone: string;
+    // more properties omitted
+}
+export interface WxFeature {
+    type: "Feature";
+    properties: {
+        city: string;
+        state: string;
+        distance: WmoUnit;
+        bearing: WmoUnit;
+    }
 }

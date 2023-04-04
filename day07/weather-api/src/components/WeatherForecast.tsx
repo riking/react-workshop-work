@@ -2,7 +2,7 @@ import { AppError, isAppError, WeatherPeriod, WeatherResponse } from '../types';
 import PeriodDisplay from './PeriodDisplay';
 import './WeatherForecast.css'
 
-const WeatherForecast = ({ data }: { data: WeatherResponse|AppError|undefined }) => {
+const WeatherForecast = ({ data, placeName }: { data: WeatherResponse|AppError|undefined, placeName: string }) => {
     if (!data) {
         return <div className='WeatherForecast loading'>Loading...</div>
     }
@@ -14,6 +14,7 @@ const WeatherForecast = ({ data }: { data: WeatherResponse|AppError|undefined })
     periodKeys.sort((a, b) => { return parseInt(a) - parseInt(b); });
     return (
         <div className='WeatherForecast'>
+            <h2>Weather forecast for {placeName}</h2>
             <ul>
                 <>{
                 periodKeys.map(key => {

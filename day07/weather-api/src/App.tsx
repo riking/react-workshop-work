@@ -8,18 +8,20 @@ import LocationPicker from './components/LocationPicker';
 import WeatherForecast from './components/WeatherForecast';
 
 function App() {
-  const [airport, setAirport] = useState("DTX");
+  const [gridId, setGridId] = useState("DTX");
   const [gridpoint, setGridpoint] = useState("65,33");
+  const [placeName, setPlaceName] = useState("Detroit, MI");
   const [weatherResponse, setWeatherResponse] = useState<WeatherResponse|AppError|undefined>(undefined);
 
-  const setLocation = (airport: string, gridpoint: string) => {
-    setAirport(airport);
+  const setLocation = (gridId: string, gridpoint: string, placeName: string) => {
+    setGridId(gridId);
     setGridpoint(gridpoint);
+    setPlaceName(placeName);
     setWeatherResponse(undefined);
   }
 
   useEffect(() => {
-    axios.get<WeatherResponse>(`https://api.weather.gov/gridpoints/${airport}/${gridpoint}/forecast`).then(response => {
+    axios.get<WeatherResponse>(`https://api.weather.gov/gridpoints/${gridId}/${gridpoint}/forecast`).then(response => {
       const wr: WeatherResponse = response.data;
       setWeatherResponse(wr);
     }).catch((err) => {
@@ -29,7 +31,7 @@ function App() {
       };
       setWeatherResponse(errorData);
     });
-  }, [airport, gridpoint]);
+  }, [gridId, gridpoint]);
 
   return (
     <div className="App">
@@ -37,7 +39,7 @@ function App() {
         <h1>Weather Forecast</h1>
       </header>
       <LocationPicker setLocation={setLocation} />
-      <WeatherForecast data={weatherResponse} />
+      <WeatherForecast data={weatherResponse} placeName={placeName} />
     </div>
   );
 }
